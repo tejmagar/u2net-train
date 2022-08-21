@@ -24,10 +24,9 @@ def bce_loss(y_true, y_pred):
 
 # Training
 batch_size = 8
-epochs = 502
+epochs = 100
 learning_rate = 0.001
-eval_interval = 100
-weights_save_interval = 500
+weights_save_interval = 50
 
 adam = keras.optimizers.Adam(learning_rate=learning_rate, beta_1=.9, beta_2=.999, epsilon=1e-08)
 inputs = keras.Input(shape=default_in_shape)
@@ -35,7 +34,7 @@ net = U2NET()
 out = net(inputs)
 model = keras.Model(inputs=inputs, outputs=out, name='u2netmodel')
 model.compile(optimizer=adam, loss=bce_loss, metrics=None)
-model.load_weights(checkpoint_path.joinpath('0.5873064398765564.h5'))
+model.load_weights(checkpoint_path.joinpath('0.45402154326438904.h5'))
 
 # train and show progress
 
@@ -53,3 +52,5 @@ for e in range(epochs):
         pass
     except ValueError:
         pass
+
+model.save_weights(str(checkpoint_path.joinpath('final.h5')))
