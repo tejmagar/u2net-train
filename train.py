@@ -24,7 +24,7 @@ def bce_loss(y_true, y_pred):
 
 # Training
 batch_size = 8
-epochs = 100
+epochs = 1000
 learning_rate = 0.001
 weights_save_interval = 50
 
