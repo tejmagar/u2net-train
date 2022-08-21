@@ -24,7 +24,7 @@ def bce_loss(y_true, y_pred):
 
 # Training
 batch_size = 8
-epochs = 10000
+epochs = 502
 learning_rate = 0.001
 eval_interval = 100
 weights_save_interval = 500
@@ -35,7 +35,7 @@ net = U2NET()
 out = net(inputs)
 model = keras.Model(inputs=inputs, outputs=out, name='u2netmodel')
 model.compile(optimizer=adam, loss=bce_loss, metrics=None)
-# model.load_weights(checkpoint_path.joinpath(''))
+model.load_weights(checkpoint_path.joinpath('/content/drive/MyDrive/ml/u2net-train/saved/0.5873064398765564.h5'))
 
 # train and show progress
 
