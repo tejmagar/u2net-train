@@ -35,7 +35,7 @@ net = U2NET()
 out = net(inputs)
 model = keras.Model(inputs=inputs, outputs=out, name='u2netmodel')
 model.compile(optimizer=adam, loss=bce_loss, metrics=None)
-model.load_weights(checkpoint_path.joinpath('/content/drive/MyDrive/ml/u2net-train/saved/0.5873064398765564.h5'))
+model.load_weights(checkpoint_path.joinpath('0.5873064398765564.h5'))
 
 # train and show progress
 
